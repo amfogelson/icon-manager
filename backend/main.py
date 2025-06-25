@@ -192,5 +192,12 @@ if __name__ == "__main__":
     # Get port from environment variable (Railway sets this)
     port = int(os.environ.get("PORT", 8000))
     
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    print(f"Starting server on port {port}")
+    print(f"Environment: {os.environ.get('RAILWAY_ENVIRONMENT', 'development')}")
+    
+    try:
+        uvicorn.run(app, host="0.0.0.0", port=port, log_level="info")
+    except Exception as e:
+        print(f"Failed to start server: {e}")
+        raise
 
