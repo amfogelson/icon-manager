@@ -25,7 +25,7 @@ function App() {
   const [groupColors, setGroupColors] = useState({}); // Track colors for each group of current icon
 
   const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
-
+//Trigger redeploy
   useEffect(() => {
     axios.get(`${backendUrl}/icons`)
       .then(res => setIcons(res.data.icons))
