@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 let debounceTimer = null;
 
 function App() {
+  console.log('VITE_BACKEND_URL:', import.meta.env.VITE_BACKEND_URL);
   const [icons, setIcons] = useState([]);
   const [flags, setFlags] = useState([]);
   const [selectedIcon, setSelectedIcon] = useState(null);
